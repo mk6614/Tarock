@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">Tarock</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="uredi_igro">uredi rezultate</string>
+    <string name="shrani_igro">shrani igro</string>
+    <string name="koncaj_igro">končaj igro</string>
+    <string name="ime_igre">ime igre</string>
+    <string name="razveljavi">razveljavi</string>
+
+    <string name="nadaljuj">nadaljuj</string>
+    <string name="nova_igra">nova igra</string>
+    <string name="nalozi">naloži</string>
+    <string name="opcije">možnosti</string>
+    <string name="title_activity_nova_igra">nova igra</string>
+    <string name="igralci">igralci</string>
+    <string name="radelci">radelci</string>
+    <string name="rezultati">rezultati</string>
+    <string name="ime">ime </string>
+    <string name="title_activity_razpredelnica">razpredelnica</string>
+    <string name="title_activity_izbira_igre">izbira igre</string>
+    <string name="igra">igra</string>
+    <string name="breac">berač</string>
+    <string name="klop">klop</string>
+    <string name="solo">solo</string>
+    <string name="title_activity_razlika">Razlika</string>
+    <string name="napovedi">napovedi</string>
+    <string name="title_activity_napovedi">Napovedi</string>
+    <string name="kralji">kralji</string>
+    <string name="kralj_ultima">kralj ultima</string>
+    <string name="pagat_ultima">pagat ultima</string>
+    <string name="trula">trula</string>
+    <string name="napovedano">napovedano?</string>
+    <string name="title_activity_klop">klop</string>
+    <string name="title_activity_valat">valat</string>
+    <string name="title_activity_berac">Berac</string>
+    <string name="title_activity_uredi">Uredi</string>
+    <string name="title_activity_nalozi">Nalozi</string>
+    <string name="title_activity_mondfang">Mondfang</string>
+    <string name="title_activity_selfie">Selfie</string>
+    <string name="title_activity_pravila">Pravila</string>
+
+    <string name="pravila">Na začetku igre določite naslednje spremenljivke</string>
+    <string name="vrednost_mondfang">vrednost za Mondfang</string>
+    <string name="klop_vrednost">ali se pri klopu upoštevajo radelci?</string>
+    <string name="vrednost_barvni_valat">vrednost barvnega valata</string>
+    <string name="ja">ja</string>
+    <string name="ne">ne</string>
+</resources>

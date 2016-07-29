@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mojca.ca.tarockfinal.Razpredelnica">
+    <item
+        android:id="@+id/uredi"
+        android:orderInCategory="100"
+        android:title="@string/uredi_igro"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/shrani"
+        android:orderInCategory="100"
+        android:title="@string/shrani_igro"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/koncaj"
+        android:orderInCategory="100"
+        android:title="@string/koncaj_igro"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/razveljavi"
+        android:orderInCategory="100"
+        android:title="@string/razveljavi"
+        app:showAsAction="never" />
+
+
+
+</menu>

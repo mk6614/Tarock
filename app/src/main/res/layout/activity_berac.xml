@@ -1,0 +1,232 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_trans"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mojca.ca.tarockfinal.Berac">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <RadioGroup
+            android:id="@+id/group_igralec"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/igr1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/igr2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+
+            <RadioButton
+                android:id="@+id/igr3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <RadioButton
+                android:id="@+id/igr4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/group_odprt"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:focusable="false"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/pikolo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="pikolo"
+                android:typeface="serif"/>
+
+            <RadioButton
+                android:id="@+id/zaprt"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:typeface="serif"
+                android:text="zaprt"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/odprt"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:background="@drawable/selected"
+                android:button="@null"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="odprt"
+                android:typeface="serif"/>
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/lose"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:background="@drawable/sad_empty"
+                android:button="@null"
+                android:layout_margin="25dp" />
+
+            <Button
+                android:id="@+id/win"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:background="@drawable/happy_icon"
+                android:button="@null"
+                android:layout_margin="25dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <CheckBox
+                android:id="@+id/kontra"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="kontra"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/re"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="re"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/sub"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="sub"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/mort"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="mort"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="7dp"
+            android:layout_weight="2"
+            android:background="@null"
+            android:src="@drawable/arrow_left" />
+
+    </LinearLayout>
+
+</RelativeLayout>

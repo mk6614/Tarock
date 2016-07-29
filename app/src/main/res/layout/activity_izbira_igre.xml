@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mojca.ca.tarockfinal.IzbiraIgre"
+    android:background="@color/black_trans"
+    android:padding="35dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="5dp">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/left"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/l1"/>
+
+            </FrameLayout>
+
+
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="2     igra"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/edit_text"
+                android:layout_margin="5dp"
+                android:typeface="serif"
+                android:id="@+id/igra"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/right"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/r1"/>
+
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_margin="5dp">
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/left"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerInside"
+                    android:id="@+id/l2"/>
+
+            </FrameLayout>
+
+             <Button
+                 android:id="@+id/solo"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:text="3     solo"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/edit_text"
+                 android:layout_margin="5dp"
+                 android:typeface="serif"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/r2"
+                    android:layout_gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/right"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerInside"/>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/klop"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text"
+            android:typeface="serif"
+            android:id="@+id/klop"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@string/breac"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text"
+            android:typeface="serif"
+            android:id="@+id/berac"/>
+
+        <Button
+            android:layout_margin="10dp"
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="valat"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/edit_text"
+            android:typeface="serif"
+            android:id="@+id/valat"/>
+
+
+
+        <ImageButton
+            android:layout_width="200dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/arrow_left"
+            android:background="@null"
+            android:id="@+id/back"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

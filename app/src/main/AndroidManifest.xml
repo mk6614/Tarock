@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mojca.ca.tarockfinal" >
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".NovaIgra"
+            android:label="@string/title_activity_nova_igra" >
+        </activity>
+        <activity
+            android:name=".Razpredelnica"
+            android:label="@string/title_activity_razpredelnica" >
+        </activity>
+        <activity
+            android:name=".IzbiraIgre"
+            android:label="@string/title_activity_izbira_igre" >
+        </activity>
+        <activity
+            android:name=".Razlika"
+            android:label="@string/title_activity_razlika" >
+        </activity>
+        <activity
+            android:name=".Napovedi"
+            android:label="@string/title_activity_napovedi" >
+        </activity>
+        <activity
+            android:name=".klop"
+            android:label="@string/title_activity_klop" >
+        </activity>
+        <activity
+            android:name=".valat"
+            android:label="@string/title_activity_valat" >
+        </activity>
+        <activity
+            android:name=".Berac"
+            android:label="@string/title_activity_berac" >
+        </activity>
+        <activity
+            android:name=".Uredi"
+            android:label="@string/title_activity_uredi" >
+        </activity>
+        <activity
+            android:name=".Nalozi"
+            android:label="@string/title_activity_nalozi" >
+        </activity>
+        <activity
+            android:name=".Mondfang"
+            android:label="@string/title_activity_mondfang" >
+        </activity>
+        <activity
+            android:name=".Selfie"
+            android:label="@string/title_activity_selfie" >
+        </activity>
+        <activity
+            android:name=".Pravila"
+            android:label="@string/title_activity_pravila" >
+        </activity>
+    </application>
+
+</manifest>

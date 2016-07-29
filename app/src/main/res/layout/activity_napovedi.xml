@@ -1,0 +1,265 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_trans"
+    android:padding="15dp"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mojca.ca.tarockfinal.Napovedi">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/nKralji"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@null"
+                android:button="@drawable/checkbox" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/kralji"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/winKralji"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/happy_icon" />
+
+            <CheckBox
+                android:id="@+id/loseKralji"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/sad_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/nKraljU"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@null"
+                android:button="@drawable/checkbox" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/kralj_ultima"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/winKraljU"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/happy_icon" />
+
+            <CheckBox
+                android:id="@+id/loseKraljU"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/sad_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/nPagatU"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@null"
+                android:button="@drawable/checkbox" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/pagat_ultima"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/winPagatU"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/happy_icon" />
+
+            <CheckBox
+                android:id="@+id/losePagatU"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/sad_icon" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/nTrula"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@null"
+                android:button="@drawable/checkbox" />
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/trula"
+                android:typeface="serif" />
+
+            <CheckBox
+                android:id="@+id/winTrula"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/happy_icon" />
+
+            <CheckBox
+                android:id="@+id/loseTrula"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@null"
+                android:button="@drawable/sad_icon" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/kontra"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="kontra"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/re"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="re"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/sub"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="sub"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+            <CheckBox
+                android:id="@+id/mort"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/checkbox"
+                android:button="@null"
+                android:layout_margin="5dp"
+                android:text="mort"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:typeface="serif"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:padding="2dp">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:src="@drawable/arrow_left" />
+
+            <ImageButton
+                android:id="@+id/forward"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="7dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:src="@drawable/arrow_right" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
