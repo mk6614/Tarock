@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -46,20 +47,24 @@ public class NovaIgra extends ActionBarActivity {
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("problem", "tu nej bi se igra shranla");
-                String[] x = new String[4];
-                for (int i=0; i<4; i++){
-                    x[i] = ime[i].getText().toString();
+                if(imeIgre.getText().toString().trim().length()!=0) {
+                    Log.i("problem", "tu nej bi se igra shranla");
+                    String[] x = new String[4];
+                    for (int i = 0; i < 4; i++) {
+                        x[i] = ime[i].getText().toString();
+                    }
+                    MainActivity.igra = new Igra(x, imeIgre.getText().toString());
+                    MainActivity.list.add(imeIgre.getText().toString());
+                    SharedPreferences ss = getSharedPreferences("imenaIger", Context.MODE_PRIVATE);
+                    MainActivity.saveImenaIger(ss);
+                    MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
+                    Log.i("problem", "tu nej bi se igra shranla");
+                    Intent in = new Intent(NovaIgra.this, Pravila.class);
+                    startActivity(in);
+                    finish();
+                } else {
+                    Toast.makeText(NovaIgra.this, "pozabili ste vpisati ime igre", Toast.LENGTH_SHORT).show();
                 }
-                MainActivity.igra=new Igra(x, imeIgre.getText().toString());
-                MainActivity.list.add(imeIgre.getText().toString());
-                SharedPreferences ss = getSharedPreferences("imenaIger", Context.MODE_PRIVATE);
-                MainActivity.saveImenaIger(ss);
-                MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
-                Log.i("problem", "tu nej bi se igra shranla");
-                Intent in = new Intent(NovaIgra.this, Pravila.class);
-                startActivity(in);
-                finish();
             }
         });
 

@@ -17,7 +17,9 @@ public class Igra {
     private String[] razveljaviRez = new String[4];
     private String[] razveljaviRad = new String[4];
     private int mondfang, barvniValat;
-    private boolean klop;
+    private int klop = 4; //?e je vsiljen
+    private boolean polnaKlop; //?e ga igramo
+    private boolean radelciKlop = true; //?e se upoštevajo radelci
 
     public Igra(String[] imena, String imeIgre){
         if (imena != null) {
@@ -33,8 +35,8 @@ public class Igra {
             radelc[i]=0;
         }
         mondfang = 25;
-        barvniValat = 250;
-        klop = true;
+        barvniValat = 125;
+        polnaKlop = true;
     }
 
     public void setIme(int i, String ime){
@@ -103,13 +105,18 @@ public class Igra {
         return radelci[i];
     }
 
+    public int getRadelcInt(int i) {return radelc[i]; }
+
     public String getRezultat(int i){
         return rezultati[i];
     }
 
+    public int getRezultatI(int i) { return rezultat[i]; }
+
     public void setRezultat(int i, int r){
         rezultat[i]+=r;
         rezultati[i]+="\n"+Integer.toString(rezultat[i]);
+        klop(i);
     }
     public void brisiRadelc(int i){
         radelc[i]--;
@@ -128,6 +135,17 @@ public class Igra {
             return true;
         }
         return false;
+    }
+
+    public void klop(int i) {
+        if (rezultat[i]%100==0){
+            klop=i;
+        }
+    }
+    public int isKlop(){
+        int tmp = klop;
+        klop=-1;
+        return tmp;
     }
 
 
@@ -161,7 +179,7 @@ public class Igra {
         //pravila
         e.putInt("mf", mondfang);
         e.putInt("bv", barvniValat);
-        e.putBoolean("k", klop);
+        e.putBoolean("k", polnaKlop);
 
         e.commit();
     }
@@ -198,7 +216,7 @@ public class Igra {
 
         mondfang = s.getInt("mf", 25);
         barvniValat = s.getInt("bv", 125);
-        klop = s.getBoolean("k", true);
+        polnaKlop = s.getBoolean("k", true);
 
         setRazveljavi();
     }
@@ -206,10 +224,10 @@ public class Igra {
     public void setPravila(int mf, int bv, boolean k){
         mondfang = mf;
         barvniValat = bv;
-        klop = k;
+        radelciKlop = k;
     }
 
-    public boolean getKlop(){return klop;}
+    public boolean getKlop(){return polnaKlop;}
 
     public int getBarvniValat() {
         return barvniValat;
@@ -218,4 +236,9 @@ public class Igra {
     public int getMondfang(){
         return mondfang;
     }
+
+    public boolean radelciKlop() {
+        return radelciKlop;
+    }
+
 }

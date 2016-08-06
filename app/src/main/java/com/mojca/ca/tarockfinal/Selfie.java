@@ -26,7 +26,7 @@ import java.util.Locale;
 public class Selfie extends ActionBarActivity {
     private static final int CAMERA_CAPTURE_IMAGE_REQUEST_CODE = 100;
     public static final int MEDIA_TYPE_IMAGE = 1;
-    private static final String IMAGE_DIRECTORY_NAME = "Hello Camera";
+    private static final String IMAGE_DIRECTORY_NAME = "Tarok";
 
     private Uri fileUri; // file url to store image/vide
 

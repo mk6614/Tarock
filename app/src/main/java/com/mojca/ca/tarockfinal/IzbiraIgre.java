@@ -166,7 +166,7 @@ public class IzbiraIgre extends ActionBarActivity {
             }
         });
 
-        //navodila();
+
     }
 
     @Override
@@ -190,62 +190,5 @@ public class IzbiraIgre extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void navodila() {
-        Tooltip.TooltipView[] ttv = new Tooltip.TooltipView[5];
-        View[] v = new View[5];
-        v[0] = igra;
-        v[1] = solo;
-        v[2] = klop;
-        v[3] = berac;
-        v[4] = valat;
-        for (int i=0; i<5; i++){
-            ttv[i] = Tooltip.make(this,
-                    new Tooltip.Builder(101)
-                            .anchor(v[i], Tooltip.Gravity.BOTTOM)
-                            .closePolicy(new Tooltip.ClosePolicy()
-                                    .insidePolicy(true, false)
-                                    .outsidePolicy(true, false), 1800)
-                            .activateDelay(0)
-                            .showDelay(300)
-                            .text("izberite igro")
-                            .maxWidth(500)
-                            .withArrow(true)
-                            .withOverlay(true)
-                            .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                            .build()
-            );
-            ttv[i].show();
-        }
-        Tooltip.make(this,
-                new Tooltip.Builder(101)
-                        .anchor(l1, Tooltip.Gravity.BOTTOM)
-                        .closePolicy(new Tooltip.ClosePolicy()
-                                .insidePolicy(true, false)
-                                .outsidePolicy(true, false), 3600)
-                        .activateDelay(0)
-                        .showDelay(2100)
-                        .text("pomanjšajte vrednost")
-                        .maxWidth(500)
-                        .withArrow(true)
-                        .withOverlay(true)
-                        .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                        .build()
-        ).show();
 
-        Tooltip.make(this,
-                new Tooltip.Builder(101)
-                        .anchor(r1, Tooltip.Gravity.BOTTOM)
-                        .closePolicy(new Tooltip.ClosePolicy()
-                                .insidePolicy(true, false)
-                                .outsidePolicy(true, false), 3600)
-                        .activateDelay(0)
-                        .showDelay(2100)
-                        .text("povečajte vrednost")
-                        .maxWidth(500)
-                        .withArrow(true)
-                        .withOverlay(true)
-                        .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                        .build()
-        ).show();
-    }
 }

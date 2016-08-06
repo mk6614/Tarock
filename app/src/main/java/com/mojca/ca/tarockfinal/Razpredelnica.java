@@ -1,5 +1,7 @@
 package com.mojca.ca.tarockfinal;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -12,6 +14,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -49,8 +53,6 @@ public class Razpredelnica extends ActionBarActivity {
         rezultati[1] = (EditText) findViewById(R.id.rezultat2);
         rezultati[2] = (EditText) findViewById(R.id.rezultat3);
         rezultati[3] = (EditText) findViewById(R.id.rezultat4);
-
-        //navodila();
 
 
 
@@ -123,7 +125,83 @@ public class Razpredelnica extends ActionBarActivity {
             Log.i("vpis", "klic");
         }
 
+        int klop = MainActivity.igra.isKlop();
+        if(klop==4){
+            final Dialog dialog = new Dialog(Razpredelnica.this);
+            dialog.setContentView(R.layout.dialog);
+            dialog.setTitle("KLOP");
 
+            // set the custom dialog components - text, image and button
+            TextView text = (TextView) dialog.findViewById(R.id.text);
+            text.setText("Za?etek s klopom?");
+
+            Button k = (Button) dialog.findViewById(R.id.yes);
+            Button s = (Button) dialog.findViewById(R.id.no);
+
+            k.setText("DA");
+            s.setText("NE");
+
+            k.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent in = new Intent(Razpredelnica.this, klop.class);
+                    startActivity(in);
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+
+            s.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+                }
+            });
+
+
+
+            dialog.show();
+        }else if(klop>=0 && klop<4 && MainActivity.igra.getKlop()){
+            final Dialog dialog = new Dialog(Razpredelnica.this);
+            dialog.setContentView(R.layout.dialog);
+            dialog.setTitle("KLOP");
+
+            // set the custom dialog components - text, image and button
+            TextView text = (TextView) dialog.findViewById(R.id.text);
+            text.setText(MainActivity.igra.getIme(klop) + ": " + MainActivity.igra.getRezultatI(klop) + "\n KLOP ali SOLO BREZ?");
+
+            Button k = (Button) dialog.findViewById(R.id.yes);
+            Button s = (Button) dialog.findViewById(R.id.no);
+
+            k.setText("KLOP");
+            s.setText("SOLO");
+
+            k.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent in = new Intent(Razpredelnica.this, klop.class);
+                    startActivity(in);
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+
+            s.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent in = new Intent(Razpredelnica.this, Razlika.class);
+                    MainActivity.tmpRezultat = 80;
+                    MainActivity.tmpSoigralec = -1;
+                    startActivity(in);
+                    dialog.dismiss();
+                    finish();
+                }
+            });
+
+
+
+            dialog.show();
+        }
     }
 
     @Override
@@ -159,6 +237,29 @@ public class Razpredelnica extends ActionBarActivity {
                 rezultati[i].scrollTo(0, rezultati[i].getBottom());
             }
         }
+        if (id == R.id.koncaj) {
+            for(int i=0; i<4; i++) {
+                MainActivity.igra.setRezultat(i, MainActivity.igra.getRadelcInt(i)*-1);
+                for (int j=0; j<MainActivity.igra.getRadelcInt(i); j++){
+                    MainActivity.igra.brisiRadelc(i);
+                }
+            }
+            for (int i = 0; i < 4; i++) {
+                imena[i].setText(MainActivity.igra.getIme(i));
+                radelci[i].setFocusable(false);
+                radelci[i].setClickable(false);
+                rezultati[i].setFocusable(false);
+                rezultati[i].setClickable(false);
+                radelci[i].setText(MainActivity.igra.getRadelc(i));
+                rezultati[i].setText(MainActivity.igra.getRezultat(i));
+                rezultati[i].scrollTo(0, rezultati[i].getBottom());
+                Log.i("vpis", "klic");
+            }
+        }
+        if (id==R.id.shrani){
+            MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
+            Toast.makeText(Razpredelnica.this, "igra se shranjuje\ntudi sama", Toast.LENGTH_SHORT).show();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -170,131 +271,5 @@ public class Razpredelnica extends ActionBarActivity {
         this.finish();
     }
 
-    private void navodila() {
-        for( int i=0; i<4; i++) {
-            ttv[0][i] = Tooltip.make(this,
-                    new Tooltip.Builder(101)
-                            .anchor(imena[i], Tooltip.Gravity.BOTTOM)
-                            .closePolicy(new Tooltip.ClosePolicy()
-                                    .insidePolicy(true, false)
-                                    .outsidePolicy(true, false), 1800)
-                            .activateDelay(0)
-                            .showDelay(300)
-                            .text("klik za igro")
-                            .maxWidth(500)
-                            .withArrow(true)
-                            .withOverlay(true)
-                            .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                            .build()
-            );
-        }
-        for (int i=0; i<4; i++) {
-            ttv[1][i] = Tooltip.make(this,
-                    new Tooltip.Builder(101)
-                            .anchor(radelci[i], Tooltip.Gravity.BOTTOM)
-                            .closePolicy(new Tooltip.ClosePolicy()
-                                    .insidePolicy(true, false)
-                                    .outsidePolicy(true, false), 3600)
-                            .activateDelay(0)
-                            .showDelay(2100)
-                            .text("radelci")
-                            .maxWidth(500)
-                            .withArrow(true)
-                            .withOverlay(true)
-                            .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                            .build()
-            );
-        }
-        for (int i=0; i<4; i++) {
-            ttv[2][i] = Tooltip.make(this,
-                    new Tooltip.Builder(101)
-                            .anchor(rezultati[i], Tooltip.Gravity.TOP)
-                            .closePolicy(new Tooltip.ClosePolicy()
-                                    .insidePolicy(true, false)
-                                    .outsidePolicy(true, false), 5400)
-                            .activateDelay(0)
-                            .showDelay(3900)
-                            .text("rezultati")
-                            .maxWidth(5000)
-                            .withArrow(true)
-                            .withOverlay(true)
-                            .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                            .build()
-            );
-        }
-            ttv[3][0] = Tooltip.make(this,
-                    new Tooltip.Builder(101)
-                            .anchor(imena[0], Tooltip.Gravity.BOTTOM)
-                            .closePolicy(new Tooltip.ClosePolicy()
-                                    .insidePolicy(true, false)
-                                    .outsidePolicy(true, false), 7200)
-                            .activateDelay(0)
-                            .showDelay(5700)
-                            .text("longklik za\nMONDFANG")
-                            .maxWidth(500)
-                            .withArrow(true)
-                            .withOverlay(true)
-                            .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                            .build()
-            );
-        ttv[3][3] = Tooltip.make(this,
-                new Tooltip.Builder(101)
-                        .anchor(imena[3], Tooltip.Gravity.BOTTOM)
-                        .closePolicy(new Tooltip.ClosePolicy()
-                                .insidePolicy(true, false)
-                                .outsidePolicy(true, false), 7200)
-                        .activateDelay(0)
-                        .showDelay(5700)
-                        .text("longklik za\nMONDFANG")
-                        .maxWidth(500)
-                        .withArrow(true)
-                        .withOverlay(true)
-                        .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                        .build()
-        );
-        ttv[3][2] = Tooltip.make(this,
-                new Tooltip.Builder(101)
-                        .anchor(imena[2], Tooltip.Gravity.BOTTOM)
-                        .closePolicy(new Tooltip.ClosePolicy()
-                                .insidePolicy(true, false)
-                                .outsidePolicy(true, false), 7200)
-                        .activateDelay(0)
-                        .showDelay(5700)
-                        .text("   ")
-                        .maxWidth(500)
-                        .withArrow(true)
-                        .withOverlay(true)
-                        .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                        .build()
-        );
-        ttv[3][1] = Tooltip.make(this,
-                new Tooltip.Builder(101)
-                        .anchor(imena[1], Tooltip.Gravity.BOTTOM)
-                        .closePolicy(new Tooltip.ClosePolicy()
-                                .insidePolicy(true, false)
-                                .outsidePolicy(true, false), 7200)
-                        .activateDelay(0)
-                        .showDelay(5700)
-                        .text("     ")
-                        .maxWidth(500)
-                        .withArrow(true)
-                        .withOverlay(true)
-                        .floatingAnimation(Tooltip.AnimationBuilder.DEFAULT)
-                        .build()
-        );
 
-        for (int i = 0; i < 3; i++) {
-            for (int j=0; j<4; j++) {
-                ttv[i][j].show();
-            }
-        }
-        ttv[3][2].show();
-        ttv[3][1].show();
-        ttv[3][0].show();
-        ttv[3][3].show();
-
-
-
-
-    }
 }

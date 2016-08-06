@@ -49,8 +49,7 @@ public class Razlika extends ActionBarActivity {
         setContentView(R.layout.activity_razlika);
         //izpis = (TextView) findViewById(R.id.izpis);
 
-        Intent intent = getIntent();
-        igra = intent.getIntExtra("igra", 0);
+        igra = MainActivity.tmpRezultat;
 
         for (int i=0; i<4;i++){
             nap[i]=0;
@@ -220,6 +219,7 @@ public class Razlika extends ActionBarActivity {
                     btnDismiss.setOnClickListener(new Button.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            MainActivity.tmpRezultat=igra;
                             popupWindow.dismiss();
                         }
                     });
