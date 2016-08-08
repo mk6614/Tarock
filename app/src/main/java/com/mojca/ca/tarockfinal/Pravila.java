@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 public class Pravila extends ActionBarActivity {
 
-    EditText mf, barvni;
-    RadioButton b;
+    EditText mf, barvni, r;
+    RadioButton b, b2;
     ImageButton forward;
 
     @Override
@@ -26,19 +26,25 @@ public class Pravila extends ActionBarActivity {
 
         mf = (EditText) findViewById(R.id.mf);
         barvni = (EditText) findViewById(R.id.barvni);
-        b = (RadioButton) findViewById(R.id.yes);
+        r = (EditText) findViewById(R.id.renons);
+        b = (RadioButton) findViewById(R.id.yesRadelciKlop);
+        b2 = (RadioButton) findViewById(R.id.yesPolnaKlop);
         forward = (ImageButton) findViewById(R.id.forward);
 
         forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 boolean napaka= false;
-                int m=25,bv=250;
-                boolean y;
+                int m=25,bv=250, renons=70;
+                boolean y, y2;
                 try {
                     m = Integer.parseInt(mf.getText().toString());
                     if (m>0){
                         m*=-1;
+                    }
+                    renons = Integer.parseInt(r.getText().toString());
+                    if (renons>0){
+                        renons*=-1;
                     }
                 } catch (Exception e){
                     napaka = true;
@@ -55,8 +61,13 @@ public class Pravila extends ActionBarActivity {
                 } else {
                     y = false;
                 }
+                if (b2.isChecked()){
+                    y2= true;
+                } else {
+                    y2 = false;
+                }
                 if(!napaka){
-                    MainActivity.igra.setPravila(m, bv ,y);
+                    MainActivity.igra.setPravila(m, bv ,y, y2, renons);
                     Intent in = new Intent(Pravila.this, Razpredelnica.class);
                     startActivity(in);
                     finish();

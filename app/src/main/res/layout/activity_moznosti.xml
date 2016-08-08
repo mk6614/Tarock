@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.mojca.ca.tarockfinal.Moznosti"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@color/grey3">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="*NO OPTIONS*\n\n
+help me improve the app, here is my contact information\n\n
+mojca.kolsek.mk@gmail.com\n\nhttps://github.com/mk6614/\n\nhttps://si.linkedin.com/in/mojca-kolšek-36999a123\n\n
+already in improvment plan:
+
+* adding playfield for 3 and 5 players\n* changing design\n* adding languages\n(it would be halpefull if you sent my your translation)"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:typeface="serif"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+
+
+
+</LinearLayout>

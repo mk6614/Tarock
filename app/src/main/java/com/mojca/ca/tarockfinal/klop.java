@@ -195,7 +195,7 @@ public class klop extends ActionBarActivity {
                                 rezultat[j] = 70;
                                 Log.i("problem:",Integer.toString(j)+": "+Integer.toString(rezultat[j]));
                             }
-                            if (MainActivity.igra.getKlop()) {
+                            if (MainActivity.igra.radelciKlop()) {
                                 if (MainActivity.igra.radelc(j)) {
                                     rezultat[j] *= 2;
                                     if (rezultat[j] < 0) {

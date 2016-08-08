@@ -29,6 +29,7 @@ public class Razpredelnica extends ActionBarActivity {
     EditText[] radelci = new EditText[4];
     EditText[] rezultati = new EditText[4];
     Tooltip.TooltipView[][] ttv = new Tooltip.TooltipView[4][4];
+    int d=-1;
 
 
     @Override
@@ -65,24 +66,52 @@ public class Razpredelnica extends ActionBarActivity {
                 Intent in = new Intent(Razpredelnica.this, Mondfang.class);
                 MainActivity.igra.setRazveljavi();
                 int id = v.getId();
-                switch (id) {
-                    case (R.id.ime1):
-                        MainActivity.igra.setRezultat(0, MainActivity.igra.getMondfang());
+                for(int i=0; i<4; i++) {
+                    if (id==imena[i].getId()){
+                        d = i;
                         break;
-                    case (R.id.ime2):
-                        MainActivity.igra.setRezultat(1, MainActivity.igra.getMondfang());
-                        break;
-                    case (R.id.ime3):
-                        MainActivity.igra.setRezultat(2, MainActivity.igra.getMondfang());
-                        break;
-                    case (R.id.ime4):
-                        MainActivity.igra.setRezultat(3, MainActivity.igra.getMondfang());
-                        break;
-                    default:
-                        break;
+                    }
                 }
-                startActivity(in);
-                finish();
+                final Dialog dialogbox = new Dialog(Razpredelnica.this);
+                dialogbox.setContentView(R.layout.dialog_mondfang);
+                dialogbox.setTitle("MOŽNOSTI");
+
+                ((Button)dialogbox.findViewById(R.id.mondfang)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity.igra.setRezultat(d, MainActivity.igra.getMondfang());
+                        dialogbox.dismiss();
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
+                        Intent in = new Intent(Razpredelnica.this, Mondfang.class);
+                        startActivity(in);
+                        finish();
+                    }
+                });
+
+                ((Button)dialogbox.findViewById(R.id.renons)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity.igra.setRezultat(d, MainActivity.igra.getRenons());
+                        dialogbox.dismiss();
+                        rezultati[d].setText(MainActivity.igra.getRezultat(d));
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
+                    }
+                });
+
+                ((Button)dialogbox.findViewById(R.id.pagat_ultima)).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity.igra.setRezultat(d, -25);
+                        dialogbox.dismiss();
+                        rezultati[d].setText(MainActivity.igra.getRezultat(d));
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
+                    }
+                });
+
+                dialogbox.show();
+
+
+
                 return true;
             }
         };
@@ -239,8 +268,8 @@ public class Razpredelnica extends ActionBarActivity {
         }
         if (id == R.id.koncaj) {
             for(int i=0; i<4; i++) {
-                MainActivity.igra.setRezultat(i, MainActivity.igra.getRadelcInt(i)*-1);
-                for (int j=0; j<MainActivity.igra.getRadelcInt(i); j++){
+                MainActivity.igra.setRezultat(i, MainActivity.igra.getRadelcInt(i)*-100);
+                while (MainActivity.igra.getRadelcInt(i)!=0){
                     MainActivity.igra.brisiRadelc(i);
                 }
             }

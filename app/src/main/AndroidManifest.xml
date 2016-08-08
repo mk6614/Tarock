@@ -72,6 +72,10 @@
             android:name=".Pravila"
             android:label="@string/title_activity_pravila" >
         </activity>
+        <activity
+            android:name=".Moznosti"
+            android:label="@string/title_activity_moznosti" >
+        </activity>
     </application>
 
 </manifest>

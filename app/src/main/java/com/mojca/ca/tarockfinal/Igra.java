@@ -16,10 +16,12 @@ public class Igra {
     private int[] rezultat = new int[4];
     private String[] razveljaviRez = new String[4];
     private String[] razveljaviRad = new String[4];
-    private int mondfang, barvniValat;
+    private int barvniValat = 125;
+    private int mondfang = -25;
     private int klop = 4; //?e je vsiljen
     private boolean polnaKlop; //?e ga igramo
     private boolean radelciKlop = true; //?e se upoštevajo radelci
+    private int renons = -70;
 
     public Igra(String[] imena, String imeIgre){
         if (imena != null) {
@@ -179,7 +181,10 @@ public class Igra {
         //pravila
         e.putInt("mf", mondfang);
         e.putInt("bv", barvniValat);
-        e.putBoolean("k", polnaKlop);
+        e.putBoolean("k", radelciKlop);
+        e.putInt("klop", klop);
+        e.putBoolean("polnaKlop", polnaKlop);
+        e.putInt("renons", renons);
 
         e.commit();
     }
@@ -216,15 +221,21 @@ public class Igra {
 
         mondfang = s.getInt("mf", 25);
         barvniValat = s.getInt("bv", 125);
-        polnaKlop = s.getBoolean("k", true);
+        radelciKlop = s.getBoolean("k", true);
+        polnaKlop = s.getBoolean("polnaKlop", true);
+        klop = s.getInt("klop", -1);
+        renons = s.getInt("renons", 70);
+
 
         setRazveljavi();
     }
 
-    public void setPravila(int mf, int bv, boolean k){
+    public void setPravila(int mf, int bv, boolean k, boolean pK, int r){
         mondfang = mf;
         barvniValat = bv;
         radelciKlop = k;
+        polnaKlop=pK;
+        renons = r;
     }
 
     public boolean getKlop(){return polnaKlop;}
@@ -240,5 +251,7 @@ public class Igra {
     public boolean radelciKlop() {
         return radelciKlop;
     }
+
+    public int getRenons() { return renons; }
 
 }

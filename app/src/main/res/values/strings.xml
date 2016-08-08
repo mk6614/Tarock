@@ -43,8 +43,11 @@
 
     <string name="pravila">Na začetku igre določite naslednje spremenljivke</string>
     <string name="vrednost_mondfang">vrednost za Mondfang</string>
-    <string name="klop_vrednost">ali se pri klopu upoštevajo radelci?</string>
+    <string name="radelciKlop">ali se pri klopu upoštevajo radelci?</string>
+    <string name="polnaKlop">ali se na polnem rezultatu igra klop?</string>
     <string name="vrednost_barvni_valat">vrednost barvnega valata</string>
     <string name="ja">ja</string>
     <string name="ne">ne</string>
+    <string name="title_activity_moznosti">Moznosti</string>
+    <string name="vrednost_renons">vrednost renonsa</string>
 </resources>

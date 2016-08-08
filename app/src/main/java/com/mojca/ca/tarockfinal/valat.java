@@ -122,6 +122,7 @@ public class valat extends ActionBarActivity {
                         MainActivity.tmpSoigralec = -2;
                         MainActivity.tmpIgralec = -2;
                         MainActivity.igra.dodajRadelce();
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
                     } else if(k==100){
                         MainActivity.tmpRezultat=MainActivity.igra.getBarvniValat();
                         if (MainActivity.igra.radelc((MainActivity.tmpIgralec))) {
@@ -138,6 +139,7 @@ public class valat extends ActionBarActivity {
                         MainActivity.tmpSoigralec = -2;
                         MainActivity.tmpIgralec = -2;
                         MainActivity.igra.dodajRadelce();
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
                     }
                 } else {
                     if (k==-1){
@@ -161,6 +163,7 @@ public class valat extends ActionBarActivity {
                         MainActivity.tmpSoigralec = -2;
                         MainActivity.tmpIgralec = -2;
                         MainActivity.igra.dodajRadelce();
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
                     } else if (k==-100){
                         MainActivity.tmpRezultat=MainActivity.igra.getBarvniValat();
                         if (MainActivity.igra.radelc((MainActivity.tmpIgralec))) {
@@ -177,6 +180,7 @@ public class valat extends ActionBarActivity {
                         MainActivity.tmpSoigralec = -2;
                         MainActivity.tmpIgralec = -2;
                         MainActivity.igra.dodajRadelce();
+                        MainActivity.igra.shraniIgro(getSharedPreferences(MainActivity.igra.getImeIgre(), Context.MODE_PRIVATE));
                     }
                     yes.setText("");
                     no.setText("");

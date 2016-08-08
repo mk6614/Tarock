@@ -61,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
         nadaljuj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (list.size()>=0) {
+                if (list.size() >= 0) {
                     MainActivity.igra = new Igra(null, list.get(list.size() - 1));
                     SharedPreferences ss = getSharedPreferences(list.get(list.size() - 1), Context.MODE_PRIVATE);
                     igra.naloziIgro(ss, list.get(list.size() - 1));
@@ -73,7 +73,13 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-
+        opcije.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(MainActivity.this, Moznosti.class);
+                startActivity(in);
+            }
+        });
 
 
     }
